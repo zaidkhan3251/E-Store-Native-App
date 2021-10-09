@@ -8,12 +8,9 @@ import {
   View,
   SafeAreaView,
 } from "react-native";
-import Carousel from "../components/Carousel";
 import CategoryList from "../components/CategoryList";
 import FeaturedProduct from "../components/FeaturedProduct";
 import Header from "../components/Header";
-import { SCREEN_WIDTH, SCREEN_HIGHT } from "../Constants/Constants";
-// import Header  from '../components/Header';
 
 const Home = () => {
   return (
@@ -24,8 +21,6 @@ const Home = () => {
         <View>
           <Text style={styles.NewArrtext}>New Arrival </Text>
         </View>
-        
-        <Carousel />
         <Text style={styles.Feattext}>Featured </Text>
         <FeaturedProduct/>
         
