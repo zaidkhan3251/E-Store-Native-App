@@ -1,4 +1,4 @@
-export default appData=[
+const appData=[
     {
       id:1,
       author:"Product name",
@@ -65,3 +65,4 @@ export default appData=[
     },
     
   ]
+  export default appData;

@@ -5,7 +5,7 @@ import {
   TextInput,
   ScrollView,
   View,
-  SafeAreaView,
+  SafeAreaView,Platform
 } from "react-native";
 import { Avatar } from "react-native-elements";
 

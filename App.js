@@ -4,7 +4,7 @@ import { StyleSheet, Text, View,Dimensions, SafeAreaView, ScrollView } from 'rea
 import Home from './src/screens/Home';
  const HEIGHT = Dimensions.get("window").height;
 
-export default App =()=> {
+const App =()=> {
   return (
     
     
@@ -19,7 +19,7 @@ export default App =()=> {
     
   );
 }    
-
+export default App;
 const styles = StyleSheet.create({ 
   container:{
     marginTop:0,
