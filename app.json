@@ -1,12 +1,12 @@
 {
   "expo": {
-    "name": "E-Store-Native-App",
-    "slug": "E-Store-Native-App",
+    "name": "mobile-ecom-poject",
+    "slug": "mobile-ecom-poject",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/elogo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

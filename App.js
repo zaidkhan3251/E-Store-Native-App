@@ -1,21 +1,44 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Dimensions, SafeAreaView, ScrollView } from 'react-native';
+import Home from './src/screens/Home';
+ const HEIGHT = Dimensions.get("window").height;
 
-export default function App() {
+export default App =()=> {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    
+    
+    
+    <View > 
+        <StatusBar style="default" />
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    <Home/>
+         </View>
+      
+      
+    
+  );
+}    
+
+const styles = StyleSheet.create({ 
+  container:{
+    marginTop:0,
+    backgroundColor:"#7e22ce",
+    height:HEIGHT,
+
   },
+  main:{
+    position: "relative",
+    width: 473,
+    height: 1024,
+    backgroundColor:"#DADADA",
+  },
+  home:{
+    position: "absolute",
+width: 473,
+height: 915,
+left: 0,
+top: 109, 
+backgroundColor: "#000",
+  },  
 });
