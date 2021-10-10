@@ -9,20 +9,24 @@ import {
   SafeAreaView,
 } from "react-native";
 import CategoryList from "../components/CategoryList";
+import Products from "../components/Products";
+import NewArr from "../components/NewArr";
 import FeaturedProduct from "../components/FeaturedProduct";
 import Header from "../components/Header";
-
+   
 const Home = () => {
   return (
-    <View style={styles.home}>
-      <ScrollView>
+    <View style={styles.home}> 
+      <ScrollView> 
         <Header />
         <CategoryList />
         <View>
           <Text style={styles.NewArrtext}>New Arrival </Text>
         </View>
+        <NewArr/>
         <Text style={styles.Feattext}>Featured </Text>
         <FeaturedProduct/>
+        <Products/>
         
         
         

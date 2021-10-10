@@ -11,7 +11,6 @@ const App =()=> {
     
     <View > 
         <StatusBar style="default" />
-
     <Home/>
          </View>
       

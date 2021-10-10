@@ -7,6 +7,8 @@ import {
   View,
   SafeAreaView,Platform
 } from "react-native";
+import { SCREEN_WIDTH,SCREEN_HIGHT } from '../Constants/Constants';
+
 import { Avatar } from "react-native-elements";
 
 import { SearchBar } from "react-native-elements";
@@ -71,7 +73,7 @@ const style = StyleSheet.create({
     flexDirection: "row",
     position: "relative",
     marginTop: 10,
-    width: 423,
+    width: SCREEN_WIDTH,
     marginBottom: 10,
     left: 0,
     top: 0,
