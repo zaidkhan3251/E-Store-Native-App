@@ -67,13 +67,13 @@ const style = StyleSheet.create({
   header: {
     display: "flex",
     flex: 1,
-
+    borderBottomWidth:1,
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
     position: "relative",
-    marginTop: 10,
-    width: SCREEN_WIDTH,
+    marginTop: 10,    
+    width: SCREEN_WIDTH,  
     marginBottom: 10,
     left: 0,
     top: 0,

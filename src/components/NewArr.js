@@ -18,7 +18,7 @@ const NewArr = () => {
   data={appData}
   renderItem={NewArrItem}
   keyExtractor={(item) => item.id}
-  style={{width: SCREEN_WIDTH, height:SCREEN_WIDTH*0.88}}
+  style={{width: SCREEN_WIDTH, height:SCREEN_WIDTH*0.99}}
   
 
 

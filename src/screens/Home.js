@@ -6,7 +6,6 @@ import {
   Text,
   TextInput,
   View,
-  SafeAreaView,
 } from "react-native";
 import CategoryList from "../components/CategoryList";
 import Products from "../components/Products";
@@ -18,6 +17,7 @@ const Home = () => {
   return (
     <View style={styles.home}> 
       <ScrollView> 
+      <Text style={styles.Feattext}>E-Store </Text>
         <Header />
         <CategoryList />
         <View>

@@ -1,12 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, View,Dimensions, SafeAreaView, ScrollView,FlatList} from 'react-native';
 
-const Detail = () => {
+const Add = () => {
     return (
-<View>
-            <Text>Detail page</Text>
+        <View>
+            <Text>Add page</Text>
         </View>
     )
 }
 
-export default Detail
+export default Add

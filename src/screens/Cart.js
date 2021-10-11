@@ -1,12 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, View,Dimensions, SafeAreaView, ScrollView,FlatList} from 'react-native';
 
-const Detail = () => {
+const Cart = () => {
     return (
-<View>
-            <Text>Detail page</Text>
+        <View>
+            <Text>Cart page</Text>
         </View>
     )
 }
 
-export default Detail
+export default Cart

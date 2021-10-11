@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mobile-ecom-poject",
-    "slug": "mobile-ecom-poject",
+    "name": "E-Store-Native-App",
+    "slug": "E-Store-Native-App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
