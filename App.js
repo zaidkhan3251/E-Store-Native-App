@@ -53,7 +53,7 @@ function HomeScreen() {
         },
       })}
       tabBarOptions={{
-        activeTintColor: 'tomato',
+        activeTintColor: '#ED0095',
         inactiveTintColor: 'gray',
       }}>
       <Tab.Screen

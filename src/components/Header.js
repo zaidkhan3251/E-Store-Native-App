@@ -7,89 +7,50 @@ import {
   View,
   SafeAreaView,
   Platform,
+  Image
 } from 'react-native';
+import Brand from "./brand3.png"
 import { SCREEN_WIDTH, SCREEN_HIGHT } from '../Constants/Constants';
+import { Ionicons } from '@expo/vector-icons';
 
-import { Avatar } from 'react-native-elements';
+import { Avatar, Header } from 'react-native-elements';
 
 import { SearchBar } from 'react-native-elements';
 
-export default function Header({navigation}) {
-  const [search, setSearch] = useState('');
+export default function HeaderBar({navigation}) {
+
+  // brand name color code #ED0095 //
   return (
-    <View style={style.header}>
-      <View style={style.viewStyle}>
-        <Text style={style.Feattext}>E-Store </Text>
-
-        <SearchBar
-          round    
-          inputContainerStyle={{
-            backgroundColor: 'white',
-
-            elevation: 10,
-          }}
-          containerStyle={{
-            backgroundColor: '#fff',
-            borderTopWidth: 0,
-            borderBottomWidth: 0,
-          }}
-          lightTheme={true}
-          searchIcon={{ size: 24 }}
-          placeholder="Type Here..."
-          onChangeText={(text) => setSearch(text)}
-          value={search}
-          onClear={(text) => setSearch('')}
-        />
-      </View>
-      <View
-        style={{
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: 5,
-          marginTop: 50,
-        }}>
-        <Avatar
-          rounded
-          size={45}
-          source={{
-            uri: 'https://www.w3schools.com/w3images/avatar6.png',
-          }}
-          onPress={() => navigation.toggleDrawer()}
-        />
-      </View>
+    <View style={{width:"100%",backgroundColor:"white",justifyContent:"space-between", alignItems:"center",alignContent:"center",flexDirection:"row",paddingHorizontal:10,paddingVertical:5,marginBottom:7,elevation: 8}}> 
+    <Image source={Brand} style={{
+            width: 100, 
+            height:70,
+            resizeMode: "contain"
+          
+          }}/>
+    <Avatar
+  
+         rounded 
+         size={30} 
+         source={{
+          uri: 'https://www.w3schools.com/w3images/avatar6.png',
+            }}
+           onPress={() => navigation.toggleDrawer()} 
+          />
     </View>
+   
   );
 }
 const style = StyleSheet.create({
-  viewStyle: {
-    justifyContent: 'center',
-    flex: 1,
-    marginTop: Platform.OS == 'ios' ? 29 : 20,
-  },
-  header: {
-    display: 'flex',
-    flex: 1,
-    borderBottomWidth: 1,
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    position: 'relative',
-    marginTop: 10,
-    width: SCREEN_WIDTH,
-    marginBottom: 10,
-    left: 0,
-    top: 0,
-  },
-  Feattext: {
-    justifyContent: 'center',
+  brandName: {
     textShadowOffset: { width: 2, height: 2 },
-    textShadowColor: '#555555',
-    textShadowRadius: 6,
-    textAlign: 'left',
-    fontSize: 24,
-    marginBottom: 0,
-    marginLeft: 15,
-    color: '#000',
-    elevation: 8,
+
+    fontSize: 24,fontFamily: 'FiraCode_300Light',
+
+    // marginTop: 8,
+    // marginBottom: 2,
+    // fontWeight: 'bold',
+    // color: '#000',
+    // elevation: 8,
   },
 });

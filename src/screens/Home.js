@@ -24,41 +24,16 @@ import NewArr from '../components/NewArr';
 import FeaturedProduct from '../components/FeaturedProduct';
 import { Avatar, Header } from 'react-native-elements';
 import CategoryItem from '../components/CategoryItem';
+import HeaderBar from '../components/Header'
 const Home = ({ navigation }) => {
-  console.log('data', appData.products);
+  // console.log('data', appData.products);
   // const onPressHandler=()=>{
   //   navigation.navigate("Detail")
   // }
   return (
+    <SafeAreaView>
     <View style={styles.home}> 
-      <Header
-        statusBarProps={{ barStyle: 'light-content' }}
-        leftComponent={
-          <Avatar
-            rounded
-            size={45}
-            source={{
-              uri: 'https://www.w3schools.com/w3images/avatar6.png',
-            }}
-            onPress={() => navigation.toggleDrawer()}
-          />
-        }
-        rightComponent={
-          <Ionicons
-            name="cart-outline"
-            size={40}
-            color="#000"
-            onPress={() => navigation.navigate('Cart')}
-          />
-        }
-        centerComponent={<Text style={styles.NewArrtext}> E-Store</Text>}
-        containerStyle={{
-          backgroundColor: '#fff',
-          justifyContent: 'space-around',
-          height: 80,
-          elevation: 8,
-        }}
-      />
+      <HeaderBar navigation={navigation}/>
       <ScrollView style={styles.Subhome}>
         <CategoryItem navigation={navigation} data={appData.products} />
         <View>
@@ -81,7 +56,7 @@ const Home = ({ navigation }) => {
         <FeaturedProduct />
         <Products />
       </ScrollView>
-    </View>
+    </View></SafeAreaView>
   );
 };
 // FeaturedProductItem
@@ -92,7 +67,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     padding: 0,
-    top: 0,
+    top: 2,
     backgroundColor: '#fff',
     color: '#fff',
   },
