@@ -1,19 +1,31 @@
 import React from 'react'
-import { StyleSheet, View, Text, Image,Dimensions } from "react-native";
+import { StyleSheet, View, Text, Image,Dimensions,Pressable,ScrollView } from "react-native";
 import { SCREEN_WIDTH } from '../Constants/Constants';
 const ITEM_WIDTH = Math.round(SCREEN_WIDTH * 0.4);
+import appData from './appData';
 
-const CategoryItem = ({ item}) => {
+const CategoryItem = ({ navigation }) => {
+  const onPressHandler=(item)=>{
+    navigation.navigate("Detail",{product:item}) 
+    console.log(item,"click on category Item")
+  }
     return (
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      {appData.products.map((item)=>(  
+      
+      <Pressable  onPress={()=>onPressHandler(item)}>     
         <View style={styles.container} key={item.id}>
           <Image source={{ uri: item.imgUrl }} style={styles.image} />
           <View style={styles.body}>
             <Text style={styles.text}>{item.author}</Text>
           </View>
         </View>
-      );
+        </Pressable>)
+        )}
+        </ScrollView>
+      ); 
 }
-
+ 
 export default CategoryItem;
 const styles = StyleSheet.create({
     container: {

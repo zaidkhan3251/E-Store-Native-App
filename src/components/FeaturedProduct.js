@@ -14,7 +14,7 @@ const FeaturedProduct = () => {
   pagingEnabled={false}
   showsHorizontalScrollIndicator={false}
   legacyImplementation={false}
-  data={appData}
+  data={appData.products}
   renderItem={FeaturedProductItem}
   keyExtractor={(item) => item.id}
   contentContainerStyle={{

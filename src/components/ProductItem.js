@@ -11,7 +11,7 @@ const ProductItem = ({ item }) => {
       style={{
           display:"flex",
           flex:1,
-          paddingBottom:10,
+          paddingBottom:ITEM_HIGHT*0.1,
         width: SCREEN_WIDTH/2,
         alignItems: "center",
         justifyContent: "center",

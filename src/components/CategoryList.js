@@ -14,7 +14,7 @@ const CategoryList = () => {
   pagingEnabled={false}
   showsHorizontalScrollIndicator={false}
   legacyImplementation={false}
-  data={appData}
+  data={appData.products}
   renderItem={CategoryItem}
   keyExtractor={(item) => item.id}
   contentContainerStyle={{

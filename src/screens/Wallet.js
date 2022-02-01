@@ -1,12 +1,12 @@
 import React from 'react'
 import { StyleSheet, Text, View,Dimensions, SafeAreaView, ScrollView,FlatList} from 'react-native';
 
-const Add = () => {
+const Wallet = () => {
     return (
         <View>
-            <Text>Add page</Text>
+            <Text>Wallet page</Text>
         </View>
     )
 }
 
-export default Add
+export default Wallet

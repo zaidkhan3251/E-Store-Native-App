@@ -15,7 +15,7 @@ const Products = () => {
   pagingEnabled={true}
   showsHorizontalScrollIndicator={false}
   legacyImplementation={false}   
-  data={appData}
+  data={appData.products}
   renderItem={ProductItem}
   keyExtractor={(item) => item.id}
   numColumns={2}  
