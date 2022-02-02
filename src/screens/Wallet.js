@@ -3,9 +3,9 @@ import { StyleSheet, Text, View,Dimensions, SafeAreaView, ScrollView,FlatList} f
 
 const Wallet = () => {
     return (
-        <View>
-            <Text>Wallet page</Text>
-        </View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text style={{fontSize:16,fontWeight:'700'}}>Wallet Screen</Text>
+      </View>
     )
 }
 

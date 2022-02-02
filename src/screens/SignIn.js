@@ -5,14 +5,14 @@ import {AuthContext} from '../../context'
   const { signIn } = React.useContext(AuthContext);
 
   return (   
-    <View>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Sign In Screen</Text>
       <Button title="Sign In" onPress={() => signIn()} />
       <Button
         title="Create Account"
-        onPress={() => navigation.push("CreateAccount")}
+        onPress={() => navigation.push("CreateAccount")}  
       />
-    </View>
+    </View> 
   );
 };
 
