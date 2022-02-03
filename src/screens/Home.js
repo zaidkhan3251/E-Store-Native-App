@@ -25,15 +25,17 @@ import FeaturedProduct from '../components/FeaturedProduct';
 import { Avatar, Header } from 'react-native-elements';
 import CategoryItem from '../components/CategoryItem';
 import HeaderBar from '../components/Header'
+import Banner from '../components/Banner'
 const Home = ({ navigation }) => {
-  // console.log('data', appData.products);
+  // console.log('data', appData.products);  
   // const onPressHandler=()=>{
   //   navigation.navigate("Detail")
   // }
   return (
-    <SafeAreaView>
+    <SafeAreaView> 
     <View style={styles.home}> 
       <HeaderBar navigation={navigation}/>
+    
       <ScrollView style={styles.Subhome}>
         <CategoryItem navigation={navigation} data={appData.products} />
         <View>
@@ -46,21 +48,19 @@ const Home = ({ navigation }) => {
           showsHorizontalScrollIndicator={false}
           legacyImplementation={false}
           data={appData.products}
-          renderItem={NewArrItem}
+          renderItem={({item})=><NewArrItem item={item} navigation={navigation} />}
           keyExtractor={(item) => item.id}
           style={{ width: SCREEN_WIDTH, height: SCREEN_WIDTH * 0.99 }}
-        />
-
+        /> 
         <Text style={styles.Feattext}> Featured</Text>
 
-        <FeaturedProduct />
-        <Products />
-      </ScrollView>
+        <FeaturedProduct navigation={navigation}/>
+        <Products navigation={navigation}/>
+      </ScrollView> 
     </View></SafeAreaView>
   );
 };
-// FeaturedProductItem
-// FeaturedProduct
+
 export default Home;
 const styles = StyleSheet.create({
   home: {

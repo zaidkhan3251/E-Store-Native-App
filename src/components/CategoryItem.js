@@ -6,7 +6,7 @@ import appData from './appData';
 
 const CategoryItem = ({ navigation }) => {
   const onPressHandler=(item)=>{
-    navigation.navigate("Detail",{product:item}) 
+    navigation.navigate("CategoryProduct",{product:item}) 
     console.log(item,"click on category Item")
   }
     return (
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     },
        
     text: {
-      color: "#fff",
+      color: "#fff", 
       fontSize: 20,
       
     },

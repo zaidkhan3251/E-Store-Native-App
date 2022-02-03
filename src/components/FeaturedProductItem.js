@@ -1,10 +1,15 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, Dimensions } from "react-native";
+import { StyleSheet, View, Text, Image, Dimensions,Pressable } from "react-native";
 import { SCREEN_WIDTH } from "../Constants/Constants";
 const ITEM_WIDTH = Math.round(SCREEN_WIDTH * 0.35);
 
-const FeaturedProductItem = ({ item }) => {
+const FeaturedProductItem = ({ item ,navigation}) => {
+  const onPressHandler=(item)=>{
+    navigation.navigate("Detail",{product:item}) 
+    console.log(item,"click on category Item")
+  }
   return (
+    <Pressable  onPress={()=>onPressHandler(item)}>  
     <View style={styles.container} key={item.id}>
       <Image source={{ uri: item.imgUrl }} style={styles.image} />
       <View style={styles.body}>
@@ -12,6 +17,7 @@ const FeaturedProductItem = ({ item }) => {
         <Text style={styles.price}>{item.qoute}</Text>
       </View>
     </View>
+    </Pressable>
   );
 };
 

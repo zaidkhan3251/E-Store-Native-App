@@ -5,19 +5,23 @@ const ITEM_WIDTH = SCREEN_WIDTH * 0.56;
 const ITEM_HIGHT = ITEM_WIDTH * 1.2;
 import { useNavigation } from '@react-navigation/native';
 
-const NewArrItem = ({ item }) => {
-    
+const NewArrItem = ({ item, navigation }) => {
+     const onPressHandler=(item)=>{
+    navigation.navigate("Detail",{product:item}) 
+    console.log(item,"click on category Item")
+  }
   return (
-    <Pressable
-    >
+                <Pressable  onPress={()=>onPressHandler(item)}>     
+
+
     <View
       style={{
         width: SCREEN_WIDTH,
-        alignItems: 'center',
+        alignItems: 'center',   
         justifyContent: 'center',
       }}
       key={item.id}>
-      <View
+      <View 
         style={{
           borderRadius: 18,
           borderWidth: 7,

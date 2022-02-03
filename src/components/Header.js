@@ -9,9 +9,8 @@ import {
   Platform,
   Image,
 } from 'react-native';
-import Brand from './brand4.PNG';
+import Brand from './brand6.png';
 import { LinearGradient } from 'expo-linear-gradient';
-import MaskedView from '@react-native-community/masked-view';
 
 import { SCREEN_WIDTH, SCREEN_HIGHT } from '../Constants/Constants';
 import { Ionicons } from '@expo/vector-icons';
@@ -40,11 +39,12 @@ export default function HeaderBar({ navigation }) {
         source={Brand}
         style={{
           width: 150,
-          height: 60,
+          height: 70,
           resizeMode: 'contain',  
         }}
       />
       <Avatar
+  
         rounded
         size={30}
         source={{

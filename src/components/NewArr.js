@@ -9,7 +9,7 @@ import {
   ScrollView,
   FlatList,
 } from 'react-native';
-import appData from './appData';
+import appData from './appData';  
 import NewArrItem from './NewArrItem';
 import { SCREEN_WIDTH, SCREEN_HIGHT } from '../Constants/Constants';
 // export const SCREEN_WIDTH = Dimensions.get("window").width;
@@ -24,7 +24,7 @@ const NewArr = ({ navigation }) => {
           showsHorizontalScrollIndicator={false}
           legacyImplementation={false}
           data={appData.products}
-          renderItem={NewArrItem}
+          renderItem={(item)=><NewArrItem />}
           keyExtractor={(item) => item.id}
           style={{ width: SCREEN_WIDTH, height: SCREEN_WIDTH * 0.99 }}
         />

@@ -25,6 +25,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons'; 
 import SavedScreen from './src/screens/Saved';
 import ReferScreen from './src/screens/Refer';
+import CategoryProduct from './src/screens/CategoryProduct';
 import DrawerItems from './src/Constants/DrawerItems';
 import CustomDrawer from './src/components/CustomDrawer';
 
@@ -105,6 +106,7 @@ const HomeStackScreen = () => (
     <HomeStack.Screen name="Notifications" component={NotificationsScreen} />
     <HomeStack.Screen name="Settings" component={SettingsScreen} />
     <HomeStack.Screen name="Cart" component={Cart} />
+    <HomeStack.Screen name="CategoryProduct" component={CategoryProduct} />
    
 
   </HomeStack.Navigator>

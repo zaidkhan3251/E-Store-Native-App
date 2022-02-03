@@ -1,19 +1,25 @@
 import React from 'react'
-import { StyleSheet, View, Text,FlatList, Image,Dimensions } from "react-native";
+import { StyleSheet, View, Text,FlatList, Image,Dimensions,Pressable } from "react-native";
 import { SCREEN_WIDTH } from '../Constants/Constants';
 const ITEM_WIDTH = Math.round(SCREEN_WIDTH * 0.28);
 import appData from '../components/appData';
 
 
          
-const CategoryItem = ({ item}) => {
+const CategoryItem = ({ item,navigation}) => {
+   const onPressHandler=(item)=>{
+    navigation.navigate("CategoryProduct",{product:item}) 
+    console.log(item,"click on category Item")
+  }
     return (
+            <Pressable  onPress={()=>onPressHandler(item)}>     
+
         <View style={styles.container} key={item.id}>
           <Image source={{ uri: item.imgUrl }} style={styles.image} />
           <View style={styles.body}>
             <Text style={styles.text}>{item.author}</Text>
           </View>
-        </View>
+        </View></Pressable>
       );  
 }
 
@@ -34,7 +40,7 @@ const Explore = ({navigation} ) => {
   showsVerticalScrollIndicator={false}
   legacyImplementation={false}
   data={appData.products}
-  renderItem={CategoryItem}     
+  renderItem={({item})=><CategoryItem item={item} navigation={navigation}/>}     
   keyExtractor={(item) => item.id}   
   contentContainerStyle={{
     paddingBottom:20, backgroundColor:'#fff' 
@@ -63,7 +69,8 @@ paddingTop:20,
       width: SCREEN_WIDTH*0.97,
       height: ITEM_WIDTH,
       borderRadius: 7, 
-      opacity:0.7
+      opacity:0.9,
+      resizeMode:"cover"
 
     },
     header: {

@@ -6,7 +6,7 @@ import { SCREEN_WIDTH,SCREEN_HIGHT } from '../Constants/Constants';
 // export const SCREEN_WIDTH = Dimensions.get("window").width;
 
 
-const Products = () => {
+const Products = ({navigation}) => {
 
     return (
         <View>
@@ -16,7 +16,7 @@ const Products = () => {
   showsHorizontalScrollIndicator={false}
   legacyImplementation={false}   
   data={appData.products}
-  renderItem={ProductItem}
+  renderItem={({item})=><ProductItem navigation={navigation} item={item}/>}
   keyExtractor={(item) => item.id}
   numColumns={2}  
 
