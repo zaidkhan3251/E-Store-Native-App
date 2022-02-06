@@ -4,7 +4,7 @@ import { SCREEN_WIDTH } from "../Constants/Constants";
 const ITEM_WIDTH = Math.round(SCREEN_WIDTH * 0.35);
 import { Ionicons } from '@expo/vector-icons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-const FeaturedProductItem = ({ item ,navigation}) => {
+const TrendingProductItem = ({ item ,navigation}) => {
   const onPressHandler=(item)=>{
     navigation.navigate("Detail",{product:item}) 
     console.log(item,"click on category Item")
@@ -52,7 +52,7 @@ const FeaturedProductItem = ({ item ,navigation}) => {
   );
 };
 
-export default FeaturedProductItem;
+export default TrendingProductItem;
 const styles = StyleSheet.create({
   container: {
     paddingLeft: 10,
@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
   },
   image: {
     width: ITEM_WIDTH,
-    height: SCREEN_WIDTH * 0.45,
-    borderRadius: 7,
+    height: SCREEN_WIDTH * 0.25,
+    borderRadius: 4,
   },
   // header: {
   //   color: "#222",

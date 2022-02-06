@@ -7,7 +7,8 @@ import {
   Dimensions,
   Pressable,
 } from 'react-native';
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
+import { Ionicons } from '@expo/vector-icons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { SCREEN_WIDTH } from '../Constants/Constants';
 const ITEM_WIDTH = (SCREEN_WIDTH / 1.33) * 0.56;
 const ITEM_HIGHT = ITEM_WIDTH * 1.2;
@@ -60,15 +61,37 @@ const ProductItem = ({ item, navigation }) => {
             />
           </View>
 
-          <View> 
-            <View style={{flexDirection:"row",justifyContent:"space-between"}}>
-              <Text>{item.author}</Text>
-            <MaterialCommunityIcons name="heart-outline" size={25} color="red" />
-            </View> 
-            <View>
-              <Text>{item.rating}</Text>    
-              <Text>{item.qoute}</Text>   
-            </View>   
+          <View style={{ marginTop: 5, padding: 5 }}>
+            <View
+              style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <Text style={{ fontSize: 18, fontWeight: 'bold' }}>
+                {item.author}
+              </Text>
+              <MaterialCommunityIcons
+                name="heart-outline"
+                size={25}
+                color="red"
+              />
+            </View>
+
+            <View
+              style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                  alignContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <Text style={{ fontSize: 18, fontWeight: '300' }}>
+                  {item.rating}
+                </Text>
+                <Ionicons name="star" size={18} color="#e5cb2e" />
+              </View>
+              <Text style={{ fontSize: 18, fontWeight: '600',color: '#78716c' }}>
+                {item.qoute}
+              </Text>
+            </View>
           </View>
         </View>
       </View>

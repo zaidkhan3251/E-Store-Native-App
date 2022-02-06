@@ -22,6 +22,7 @@ import CategoryList from '../components/CategoryList';
 import Products from '../components/Products';
 import NewArr from '../components/NewArr';
 import FeaturedProduct from '../components/FeaturedProduct';
+import TrendingProduct from '../components/Trending';
 import { Avatar, Header } from 'react-native-elements';
 import CategoryItem from '../components/CategoryItem';
 import HeaderBar from '../components/Header'
@@ -55,6 +56,9 @@ const Home = ({ navigation }) => {
         <Text style={styles.Feattext}> Featured</Text>
 
         <FeaturedProduct navigation={navigation}/>
+                <Text style={styles.Feattext}> Trending</Text>
+
+        <TrendingProduct navigation={navigation}/>
         <Products navigation={navigation}/>
       </ScrollView> 
     </View></SafeAreaView>

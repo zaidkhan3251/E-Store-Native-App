@@ -46,10 +46,10 @@ const styles = StyleSheet.create({
     },
        
     text: {
-      color: "#fff", 
+    
       fontSize: 20,
       
     },
-    body: { position: 'absolute', top: 0, left: 0, right: 0, bottom: ITEM_WIDTH*0.1, justifyContent: 'center', alignItems: 'center'}    
+    // body: { position: 'absolute', top: 0, left: 0, right: 0, bottom: ITEM_WIDTH*0.1, justifyContent: 'center', alignItems: 'center'}    
   });
   

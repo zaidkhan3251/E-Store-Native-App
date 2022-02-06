@@ -65,11 +65,12 @@ export default Detail;
 const styles = StyleSheet.create({
   container:{
     flex:1, 
-    marginTop:20,
+    marginTop:0,
   },
   productImg:{
     width:"100%",
-    height:200,
+    height:500,
+    resizeMode:"cover"
   },
   name:{
     fontSize:28,
