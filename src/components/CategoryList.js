@@ -6,7 +6,7 @@ import { SCREEN_WIDTH } from '../Constants/Constants';
 // export const SCREEN_WIDTH = Dimensions.get("window").width;
 
 
-const CategoryList = () => {
+const CategoryList = ({navigation}) => {
     return (
         <View>
             <FlatList
@@ -15,7 +15,7 @@ const CategoryList = () => {
   showsHorizontalScrollIndicator={false}
   legacyImplementation={false}
   data={appData.products}
-  renderItem={CategoryItem}
+  renderItem={({item})=><CategoryItem item={item} navigation={navigation}/>}
   keyExtractor={(item) => item.id}
   contentContainerStyle={{
     

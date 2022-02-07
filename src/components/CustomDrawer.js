@@ -11,12 +11,10 @@ import {
   DrawerItemList,
 } from '@react-navigation/drawer';
 import { BlurView } from 'expo-blur';
-import { Avatar } from 'react-native-elements';
-
 import { LinearGradient } from 'expo-linear-gradient';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { Avatar } from 'react-native-elements';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import Bg from './splash2.png';
 import Profile from './elogo.png';
 const CustomDrawer = (props) => {
   return (

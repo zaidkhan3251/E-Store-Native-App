@@ -66,7 +66,7 @@ const NewArrItem = ({ item, navigation }) => {
               </Text>
               <MaterialCommunityIcons
                 name="heart-outline"
-                size={25}
+                size={22}
                 color="red"
               />
             </View>

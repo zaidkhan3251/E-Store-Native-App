@@ -1,4 +1,17 @@
-const appData = {
+// import Girlshoe from '../icons/1.png';
+// import Boyshoe from '../icons/2.png';
+// import Boypant from '../icons/10.png';
+// import Girlpant from '../icons/9.png';
+// import Girlwatch from '../icons/11.png'
+// import Boywatch from '../icons/7.png'
+// import Boyshirt from '../icons/3.png'
+// import Girlshirt from '../icons/12.jpg'
+// import Mobile from '../icons/4.png'
+// import Electronics from '../icons/6.png'
+// import Glasses from '../icons/8.png'
+// import Bag from '../icons/5.png'
+const appData = {   
+
   products: [
     {
       id: 1,
@@ -15,7 +28,7 @@ const appData = {
       imgUrl:
         'https://i.pinimg.com/236x/37/bc/85/37bc85eeb6ac4d62fffa69aca9207fbb.jpg',
         rating: "4.2"
-    },
+    }, 
     {
       id: 3, 
       author: 'Product name',
@@ -89,7 +102,7 @@ const appData = {
         rating: "3.7"
     },
     {
-      id: 12,
+      id: 12, 
       author: 'Product name',
       qoute: '$345',
       imgUrl:
@@ -99,19 +112,56 @@ const appData = {
   ],
   categories: [
     {
-      name: 'Men',
+      name: 'Boyshirt',
+      imgUrl:require("../icons/3.png")
     },
     {
-      name: 'Women',
+      name: 'Girlshirt',
+      imgUrl:require("../icons/12.png") 
     },
     {
-      name: 'Boys',
+      name: 'Boyshoe',
+      imgUrl:require("../icons/2.png")
     },
     {
-      name: 'Pants', 
+      name: 'Girlshoe',
+      imgUrl:require("../icons/1.png")
     },
     {
-      name: 'Shirts',
+      name: 'Boypant',
+      imgUrl:require("../icons/10.png")
+    },
+    {
+      name: 'Boyshirt',
+      imgUrl:require("../icons/3.png")
+    },
+    {
+      name: 'Girlpant',
+      imgUrl:require("../icons/9.png")
+    }, 
+    {
+      name: 'Girlwatch',
+      imgUrl:require("../icons/11.png")
+    },
+    {
+      name: 'Boywatch',
+      imgUrl:require("../icons/7.png")
+    },
+    {
+      name: 'Mobile',
+      imgUrl:require("../icons/4.png")
+    }, 
+    {
+      name: 'Electronics',
+      imgUrl:require("../icons/6.png")
+    }, 
+    {
+      name: 'Glasses',
+      imgUrl:require("../icons/8.png")
+    },       
+    {
+      name: 'Bag',
+      imgUrl:require("../icons/5.png")
     },
   ],
 };

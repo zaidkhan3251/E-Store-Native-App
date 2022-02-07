@@ -38,24 +38,17 @@ const Home = ({ navigation }) => {
       <HeaderBar navigation={navigation}/>
     
       <ScrollView style={styles.Subhome}>
-        <CategoryItem navigation={navigation} data={appData.products} />
+      <Banner/>
+        <CategoryItem navigation={navigation} data={appData.categories} />
         <View>
-          <Text style={styles.NewArrtext}>New Arrival</Text> 
+          <Text style={styles.NewArrtext}>New Arrival</Text>  
         </View>
 
-        <FlatList
-          horizontal
-          pagingEnabled={true}
-          showsHorizontalScrollIndicator={false}
-          legacyImplementation={false}
-          data={appData.products}
-          renderItem={({item})=><NewArrItem item={item} navigation={navigation} />}
-          keyExtractor={(item) => item.id}
-          style={{ width: SCREEN_WIDTH, height: SCREEN_WIDTH * 0.99 }}
-        /> 
+               <NewArr navigation={navigation}/>
+
         <Text style={styles.Feattext}> Featured</Text>
 
-        <FeaturedProduct navigation={navigation}/>
+        <FeaturedProduct navigation={navigation}/> 
                 <Text style={styles.Feattext}> Trending</Text>
 
         <TrendingProduct navigation={navigation}/>

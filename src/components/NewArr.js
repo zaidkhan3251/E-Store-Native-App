@@ -17,14 +17,14 @@ import { SCREEN_WIDTH, SCREEN_HIGHT } from '../Constants/Constants';
 const NewArr = ({ navigation }) => {
   return (
     <View>
-      
+        
         <FlatList
           horizontal
           pagingEnabled={true}
           showsHorizontalScrollIndicator={false}
           legacyImplementation={false}
           data={appData.products}
-          renderItem={(item)=><NewArrItem />}
+          renderItem={({item})=><NewArrItem item={item} navigation={navigation} />}
           keyExtractor={(item) => item.id}
           style={{ width: SCREEN_WIDTH, height: SCREEN_WIDTH * 0.99 }}
         />

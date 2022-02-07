@@ -38,8 +38,8 @@ export default function HeaderBar({ navigation }) {
       <Image
         source={Brand}
         style={{
-          width: 150,
-          height: 70,
+          width: 130,
+          height: 60,
           resizeMode: 'contain',  
         }}
       />
