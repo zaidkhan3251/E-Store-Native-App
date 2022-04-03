@@ -17,7 +17,6 @@
     "react-is": "^16.8.0",
     "native-base": "*",
     "styled-system": "*",
-    "react-native-svg": "12.1.1",
     "react-navigation": "*",
     "styled-components": "*",
     "@expo/vector-icons": "^12.0.0",
