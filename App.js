@@ -22,13 +22,14 @@ import SettingsScreen from './src/screens/Settings';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons'; 
+import { AntDesign } from '@expo/vector-icons';
 import SavedScreen from './src/screens/Saved';
 import ReferScreen from './src/screens/Refer';
 import CategoryProduct from './src/screens/CategoryProduct';
 import DrawerItems from './src/Constants/DrawerItems';
 import CustomDrawer from './src/components/CustomDrawer';
-
+import { Provider } from 'react-redux';
+import store from './src/Store/Store';
 const AuthStack = createStackNavigator();
 const AuthStackScreen = () => (
   <AuthStack.Navigator>
@@ -56,7 +57,7 @@ function HomeScreen() {
             iconName = focused ? 'home-outline' : 'home-outline';
           } else if (route.name === 'Explore') {
             iconName = focused ? 'ellipse-outline' : 'ellipse-outline';
-          } else if (route.name === 'Cart') {
+          } else if (route.name === 'My Cart') {
             iconName = focused ? 'cart-outline' : 'cart-outline';
           } else if (route.name === 'Search') {
             iconName = focused ? 'search-outline' : 'search-outline';
@@ -79,7 +80,7 @@ function HomeScreen() {
         options={{ headerShown: false }}
         component={Search}
       />
-      <Tab.Screen name="Cart" component={Cart} />
+      <Tab.Screen name="My Cart" component={Cart} />
     </Tab.Navigator>
   );
 }
@@ -99,7 +100,11 @@ const HomeStack = createStackNavigator();
 
 const HomeStackScreen = () => (
   <HomeStack.Navigator>
-    <HomeStack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+    <HomeStack.Screen
+      name="Home"
+      component={Home}
+      options={{ headerShown: false }}
+    />
     <HomeStack.Screen name="Detail" component={Detail} />
     <HomeStack.Screen name="Profile" component={ProfileScreen} />
     <HomeStack.Screen name="Saved Items" component={SavedScreen} />
@@ -107,79 +112,78 @@ const HomeStackScreen = () => (
     <HomeStack.Screen name="Settings" component={SettingsScreen} />
     <HomeStack.Screen name="Cart" component={Cart} />
     <HomeStack.Screen name="CategoryProduct" component={CategoryProduct} />
-   
-
   </HomeStack.Navigator>
 );
 
 const Drawer = createDrawerNavigator();
 const DrawerScreen = () => (
-<Drawer.Navigator
-           drawerContent={props => <CustomDrawer {...props} />}
-        drawerType="front"
-        initialRouteName="Home"
-        screenOptions={{
-        headerShown: false,
-        drawerActiveBackgroundColor: '#5E17EB',
-        drawerActiveTintColor: '#fff',
-        drawerInactiveTintColor: 'black',
-        
-        drawerLabelStyle: {
-          marginLeft: -25,
-          fontFamily: 'Roboto-Medium',
-          fontSize: 15,
-        }}}
-       
-      >
-      
-       {
-          DrawerItems.map(drawer=><Drawer.Screen 
-            key={drawer.name}
-            name={drawer.name} 
-            options={{
-            drawerIcon:({focused})=>
-             drawer.iconType==='Material' ? 
-              <MaterialCommunityIcons 
-                  name={drawer.iconName}
-                  size={24} 
-                  color={focused ? "#fff" : "black"} 
-              />
-            :
-            drawer.iconType==='Feather' ?
-              <Feather 
-                name={drawer.iconName}
-                size={24} 
-                color={focused ? "#fff" : "black"} 
-              /> 
-            :
-            drawer.iconType==='AntDesign' ?
-              <AntDesign 
-                name={drawer.iconName}
-                size={24} 
-                color={focused ? "#fff" : "black"} 
-              /> 
-            :
-              <FontAwesome5 
-                name={drawer.iconName}
-                size={24} 
-                color={focused ? "#fff" : "black"} 
-              />,
-              headerShown:drawer.name==="Home"? false:true
-              }}
+  <Drawer.Navigator
+    drawerContent={(props) => <CustomDrawer {...props} />}
+    drawerType="front"
+    initialRouteName="Home"
+    screenOptions={{
+      headerShown: false,
+      drawerActiveBackgroundColor: '#5E17EB',
+      drawerActiveTintColor: '#fff',
+      drawerInactiveTintColor: 'black',
 
-            component={
-              drawer.name==='Profile' ? ProfileScreen 
-                : drawer.name==='Settings' ? SettingsScreen 
-                  : drawer.name==='Saved Items' ? SavedScreen
-                  : drawer.name==='Home' ? HomeScreen
-                  : drawer.name==='Notifications' ? NotificationsScreen
-                  : drawer.name==='Wallet' ? Wallet
-                    : ReferScreen
-            } 
-          />)
-          
+      drawerLabelStyle: {
+        marginLeft: -25,
+        fontFamily: 'Roboto-Medium',
+        fontSize: 15,
+      },
+    }}>
+    {DrawerItems.map((drawer) => (
+      <Drawer.Screen
+        key={drawer.name}
+        name={drawer.name}
+        options={{
+          drawerIcon: ({ focused }) =>
+            drawer.iconType === 'Material' ? (
+              <MaterialCommunityIcons
+                name={drawer.iconName}
+                size={24}
+                color={focused ? '#fff' : 'black'}
+              />
+            ) : drawer.iconType === 'Feather' ? (
+              <Feather
+                name={drawer.iconName}
+                size={24}
+                color={focused ? '#fff' : 'black'}
+              />
+            ) : drawer.iconType === 'AntDesign' ? (
+              <AntDesign
+                name={drawer.iconName}
+                size={24}
+                color={focused ? '#fff' : 'black'}
+              />
+            ) : (
+              <FontAwesome5
+                name={drawer.iconName}
+                size={24}
+                color={focused ? '#fff' : 'black'}
+              />
+            ),
+          headerShown: drawer.name === 'Home' ? false : true,
+        }}
+        component={
+          drawer.name === 'Profile'
+            ? ProfileScreen
+            : drawer.name === 'Settings'
+            ? SettingsScreen
+            : drawer.name === 'Saved Items'
+            ? SavedScreen
+            : drawer.name === 'Home'
+            ? HomeScreen
+            : drawer.name === 'Notifications'
+            ? NotificationsScreen
+            : drawer.name === 'Wallet'
+            ? Wallet
+            : ReferScreen
         }
-      </Drawer.Navigator>
+      />
+    ))}
+  </Drawer.Navigator>
   // <Drawer.Navigator initialRouteName="Home">
   //   <Drawer.Screen
   //     name="Home"
@@ -245,10 +249,12 @@ export default function App() {
   }
 
   return (
-    <AuthContext.Provider value={authContext}>
-      <NavigationContainer>
-        <RootStackScreen userToken={userToken} />
-      </NavigationContainer>
-    </AuthContext.Provider>
+    <Provider store={store}>
+      <AuthContext.Provider value={authContext}>
+        <NavigationContainer>
+          <RootStackScreen userToken={userToken} />
+        </NavigationContainer>
+      </AuthContext.Provider>
+    </Provider>
   );
 }

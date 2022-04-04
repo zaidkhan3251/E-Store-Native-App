@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -10,14 +9,23 @@ import {
   FlatList,
   Button,
 } from 'react-native';
-// import NewArr from  '../components/NewArr'
+import React,{useEffect,useState} from 'react'
+import currencyFormatter from 'currency-formatter'
+import {useDispatch,useSelector} from 'react-redux';
 import { Ionicons } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
 import { LinearGradient } from 'expo-linear-gradient';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import {AddtoCart} from '../Actions/CartActions'
 const Detail = ({ navigation, route }) => {
   const { product } = route.params;
+      const [quantity, setQuantity] = useState(1)
+    const dispatch=useDispatch();
+const decQuantity=()=>{
+        if(quantity>1){
+            setQuantity(quantity-1)
+        }
+    }
   console.log('from detail page', product);
   return (
     <View style={styles.container}>
@@ -53,7 +61,7 @@ const Detail = ({ navigation, route }) => {
               </View>
               <Text
                 style={{ fontSize: 18, fontWeight: '700', color: '#78716c' }}>
-                {product.qoute}
+                {currencyFormatter.format(product.qoute, { code: 'USD' })}
               </Text>
             </View>
           </View>
@@ -99,22 +107,13 @@ const Detail = ({ navigation, route }) => {
         <View style={styles.addToCarContainer}>
           <TouchableOpacity
             style={styles.shareButton}
-            onPress={() => this.clickEventListener()}>
-              <LinearGradient
+            onPress={() =>dispatch({type:"ADD_TO_CART",payload:{product,quantity}})}>
+            <LinearGradient
               colors={['#9930ee', '#5e17eb']}
               start={{ x: 0, y: 1 }}
               end={{ x: 1, y: 0 }}
               useAngle
-              angle={160}  
-              style={{ height: '100%',
-                borderRadius: 30,
-                width: '100%',
-                justifyContent: 'center',
-                alignItems: 'center',}}
-              >
-            <BlurView
-              blurType="light"
-              blurAmount={50}
+              angle={160}
               style={{
                 height: '100%',
                 borderRadius: 30,
@@ -122,19 +121,28 @@ const Detail = ({ navigation, route }) => {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <View style={{ alignItems: 'center' }}>
-                <Text
-                  style={{
-                    fontSize: 20,
-                    fontFamily: 'Roboto-Medium',
-                    color: 'white',
-                  }}>
-                  Add to cart
-                </Text>
-              </View>
-             
-            </BlurView>
-             </LinearGradient>
+              <BlurView
+                blurType="light"
+                blurAmount={50}
+                style={{
+                  height: '100%',
+                  borderRadius: 30,
+                  width: '100%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <View style={{ alignItems: 'center' }}>
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      fontFamily: 'Roboto-Medium',
+                      color: 'white',
+                    }}>
+                    Add to cart
+                  </Text>
+                </View>
+              </BlurView>
+            </LinearGradient>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -149,7 +157,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 0,
     backgroundColor: 'white',
-    marginBottom:8
+    marginBottom: 8,
   },
   productImg: {
     width: '100%',

@@ -28,7 +28,7 @@ const TrendingProductItem = ({ item ,navigation}) => {
             </View>
 
             <View
-              style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
               <View
                 style={{
                   flexDirection: 'row',

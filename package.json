@@ -17,6 +17,7 @@
     "react-is": "^16.8.0",
     "native-base": "*",
     "styled-system": "*",
+    "react-native-svg": "12.1.1",
     "react-navigation": "*",
     "styled-components": "*",
     "@expo/vector-icons": "^12.0.0",
@@ -33,7 +34,7 @@
     "@khanshamshad32/carousel": "^1.0.1",
     "@react-navigation/drawer": "*",
     "@react-navigation/native": "^6.0.4",
-    "react-native-vector-icons": "^8.1.0",
+    "react-native-vector-icons": "*",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-material-ripple": "^0.9.1",
     "@react-navigation/bottom-tabs": "*",
@@ -44,7 +45,16 @@
     "@freakycoder/react-native-helpers": "^1.0.2",
     "react-native-dynamic-vector-icons": "^1.1.6",
     "@react-native-community/masked-view": "0.1.10",
-    "@freakycoder/react-native-bounceable": "^0.2.2"
+    "@freakycoder/react-native-bounceable": "^0.2.2",
+    "@types/react": "*",
+    "@types/react-native": "*",
+    "expo-blur": "~9.0.3",
+    "expo-linear-gradient": "~9.2.0",
+    "redux-thunk": "*",
+    "redux": "*",
+    "currency-formatter": "*",
+    "react-router-dom": "*",
+    "react-redux": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
